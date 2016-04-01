@@ -1,4 +1,4 @@
-import csv, sqlite3
+import csv, sqlite3]
 
 def importStatement():
     #Init the database
@@ -13,15 +13,15 @@ def importStatement():
     with open('extrato.csv', 'rb') as csvfile:
         rdr = csv.reader(csvfile, delimiter=';', quotechar='|')
         for row in rdr:
-            c.execute('insert into transaciton values (?, ?, ?, ?)', [int(row[3]), row[0], row[2], row[4]])
+            c.execute('insert into transaction values (?, ?, ?, ?)', [int(row[3]), row[0], row[2], row[4]])
     conn.commit()
 
     #Show data
-    c.execute('select * from transaciton')
+    c.execute('select * from transaction')
     print c.fetchone()
 
     #Close the DB
     c.close
     conn.close
 
-importStatement()
+importStatement
