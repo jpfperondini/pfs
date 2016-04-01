@@ -6,7 +6,7 @@ class TestStringMethods(unittest.TestCase):
       conn = db.init_memory()
       expected1 = (123456, "01/01/2016", "A", u'120,21')
       expected2 =  (654321, "02/01/2016","A","-54,31")
-      importstatement.execute(conn, "extrato.csv")
+      importstatement.execute(conn, "tests/statement.csv")
       c = conn.cursor()
       c.execute("select * from financial_transaction")
       self.assertEqual(expected1,  c.fetchone())
