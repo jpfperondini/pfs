@@ -13,3 +13,13 @@ def init(force_recreate = False):
         c.close()
         conn.close()
         logging.info('Database created')
+
+def init_memory():
+    conn = sqlite3.connect(':memory:')
+    c = conn.cursor()
+    qry = open('schema.sql', 'r').read()
+    c.execute(qry)
+    conn.commit()
+    c.close()
+    logging.info('Database created')
+    return conn;
