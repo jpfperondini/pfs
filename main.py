@@ -1,6 +1,5 @@
 #!/usr/bin/python
-import importstatement, db, os, logging, web
-
+import db, os, logging, web
 
 logging.basicConfig(level = logging.INFO)
 db.init()

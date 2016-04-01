@@ -1,4 +1,4 @@
-import unittest, importstatement, db, logging, os, sqlite3
+import unittest, db, logging, os, sqlite3
 
 class TestDB(unittest.TestCase):
 
