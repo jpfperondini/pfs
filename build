@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+nc='\033[0m'
+lblue='\033[1;34m';
+lgreen='\033[1;32m';
+lgray='\033[1;37m';
+echo "${lgray}[Building PFS]${nc}"
+echo ""
+echo "${lblue}[Running test_db.py]${nc}"
+python-coverage -x test_db.py
+echo "${lblue}[Running test_importstatement.py]${nc}"
+python-coverage -x test_importstatement.py
+echo "${lgreen}[All tests passed]${nc}"
+echo ""
+echo "${lgray}[Coverage Report]${nc}"
+python-coverage -rm -o /usr
