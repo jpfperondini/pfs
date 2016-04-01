@@ -2,7 +2,7 @@ import csv, sqlite3
 
 def execute():
     #Init the database
-    conn = sqlite3.connect(":memory:")
+    conn = sqlite3.connect("pfs.db")
     c = conn.cursor()
     qry = open('schema.sql', 'r').read()
     c.execute(qry)
