@@ -1,3 +1,5 @@
-import importstatement
+import importstatement, db, os, logging
 
-importstatement.execute()
+logging.basicConfig(level = logging.INFO)
+db.init()
+#importstatement.execute('tests/extrato.csv')
