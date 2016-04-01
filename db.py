@@ -1,11 +1,13 @@
 import sqlite3, logging, os
 
-def init(force_recreate = False):
-    if force_recreate:
-        os.remove('pfs.db')
+def init(force_recreate = False, filepath = 'pfs.db'):
+    file_exists = os.path.isfile(filepath)
 
-    if not os.path.isfile('pfs.db'):
-        conn = sqlite3.connect('pfs.db')
+    if force_recreate and file_exists:
+        os.remove(filepath)
+
+    if not file_exists:
+        conn = sqlite3.connect(filepath)
         c = conn.cursor()
         qry = open('schema.sql', 'r').read()
         c.execute(qry)
