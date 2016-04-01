@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+rm .coverage
 nc='\033[0m'
 lblue='\033[1;34m';
 lgreen='\033[1;32m';
