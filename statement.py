@@ -18,5 +18,4 @@ def _check_value(value):
 
     if len(value) - comma_idx < 3:
         raise ValueError("Invalid input " + value)
-
     return value;
