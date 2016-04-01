@@ -1,12 +1,12 @@
-import unittest, importstatement, db, logging
+import unittest, statement, db, logging
 
-class TestStringMethods(unittest.TestCase):
+class TestStatement(unittest.TestCase):
 
-  def test_execute(self):
+  def test_import_file(self):
       conn = db.init_memory()
       expected1 = (123456, "01/01/2016", "A", u'120,21')
       expected2 =  (654321, "02/01/2016","A","-54,31")
-      importstatement.execute(conn, "tests/statement.csv")
+      statement.importfile(conn, "tests/statement.csv")
       c = conn.cursor()
       c.execute("select * from financial_transaction")
       self.assertEqual(expected1,  c.fetchone())

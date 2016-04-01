@@ -9,8 +9,8 @@ echo "${lgray}[Building PFS]${nc}"
 echo ""
 echo "${lblue}[Running test_db.py]${nc}"
 python-coverage -x test_db.py
-echo "${lblue}[Running test_importstatement.py]${nc}"
-python-coverage -x test_importstatement.py
+echo "${lblue}[Running test_statement.py]${nc}"
+python-coverage -x test_statement.py
 echo "${lgreen}[All tests passed]${nc}"
 echo ""
 echo "${lgray}[Coverage Report]${nc}"
